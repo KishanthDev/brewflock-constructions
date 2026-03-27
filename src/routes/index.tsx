@@ -7,10 +7,8 @@ import ProjectsSection from '../components/ProjectsSection';
 import { WhyChooseUs } from '../components/WhyChooseUs';
 import ProcessSection from '../components/ProcessSection';
 import TestimonialsSection from '../components/TestimonialsSection';
-import CTASection from '../components/CTASection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
-import Plans from '../components/Plans';
 
 export const Route = createFileRoute('/')({
   component: LandingPage,
@@ -28,8 +26,6 @@ function LandingPage() {
         <WhyChooseUs />
         <ProcessSection />
         <TestimonialsSection />
-        <CTASection />
-        <Plans />
         <ContactSection />
       </main>
       <Footer />

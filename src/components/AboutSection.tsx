@@ -1,88 +1,93 @@
 import React from "react";
+import { CheckCircle2, PhoneCall, ArrowRight } from "lucide-react";
 
 const About: React.FC = () => {
   return (
-    <section className="py-16 bg-white" id="about">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-24 bg-white overflow-hidden" id="about">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h3 className="text-orange-500 font-semibold uppercase tracking-wide mb-2">
-            About Us
-          </h3>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Building better spaces for all
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-[#ea580c] font-bold uppercase tracking-wider text-sm block mb-3">
+            About Brewflock
+          </span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+            Building better spaces for all.
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Desirable Design & Construction is a trusted construction company in Bangalore,
-            committed to creating high-quality, practical, and stylish spaces that exceed
-            client expectations.
+          <p className="text-lg text-slate-600 leading-relaxed">
+            Brewflock Constructions is a trusted construction company committed to creating high-quality, practical, and stylish spaces that consistently exceed client expectations across South India.
           </p>
         </div>
 
-        {/* Content */}
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        {/* Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           
-          {/* Image */}
-          <div>
+          {/* Left Column: Image with Experience Badge */}
+          <div className="relative relative-group">
+            {/* Decorative background shape */}
+            <div className="absolute -inset-4 bg-orange-100 rounded-[2rem] transform -rotate-3 -z-10"></div>
+            
             <img
-              src="/images/ELE/2.jpg"
-              alt="About BrewFlock"
-              className="rounded-xl shadow-lg w-full object-cover"
+              src="/images/ELE/2.jpg" // Keep your image path
+              alt="BrewFlock Construction Project"
+              className="rounded-2xl shadow-2xl w-full h-[500px] object-cover border-4 border-white relative z-10"
             />
+            
+            {/* Floating Experience Badge */}
+            <div className="absolute -bottom-8 -right-8 md:-right-12 bg-slate-900 text-white p-6 md:p-8 rounded-2xl shadow-xl z-20 border border-slate-700 max-w-[200px] transform transition-transform hover:-translate-y-2 duration-300 hidden sm:block">
+              <div className="text-5xl font-black text-[#ea580c] mb-1">30+</div>
+              <div className="text-sm font-semibold uppercase tracking-wide text-slate-300">
+                Major Projects Completed
+              </div>
+            </div>
           </div>
 
-          {/* Text Content */}
-          <div>
-            <p className="text-gray-600 mb-6">
-              With over 30 projects completed across Bengaluru, Mysore, and Hassan,
-              we take pride in our expertise in commercial, residential, industrial,
-              and infrastructure development. Our goal is to bring client visions
-              to life with lasting, high-quality results that meet their needs and
-              enhance their spaces for the long term.
+          {/* Right Column: Text Content */}
+          <div className="space-y-8 lg:pl-8">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              With major projects completed across Bengaluru, Mysore, and Hassan, we take pride in our expertise in commercial, residential, industrial, and infrastructure development. Our goal is to bring client visions to life with lasting, high-quality results that meet their needs and enhance their spaces for the long term.
             </p>
 
-            {/* Features */}
-            <ul className="space-y-3 mb-8">
+            {/* Upgraded Features List */}
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                "Dedicated Project Team for Clients",
-                "Guaranteed Timely Project Delivery",
-                "No Hidden Costs, Clear Estimates",
-                "Premium Materials for Every Build",
-                "In-house Architectural Design Expertise",
+                "Dedicated Project Team",
+                "Guaranteed Timely Delivery",
+                "No Hidden Costs",
+                "Premium Materials",
+                "In-house Architecture",
+                "Transparent Estimates"
               ].map((item, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <span className="text-orange-500 mt-1">✔</span>
-                  <span className="font-medium text-gray-800">{item}</span>
+                <li key={index} className="flex items-center gap-3 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                  <CheckCircle2 className="w-5 h-5 text-[#ea580c] shrink-0" />
+                  <span className="font-semibold text-slate-700 text-sm">{item}</span>
                 </li>
               ))}
             </ul>
 
-            {/* Footer */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            {/* Footer / CTA Area */}
+            <div className="flex flex-col sm:flex-row items-center gap-8 pt-6 border-t border-slate-200">
               
-              {/* Button */}
+              {/* Primary Button */}
               <a
                 href="/contact"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg transition duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#ea580c] hover:bg-[#c2410c] text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-orange-900/20 active:scale-95"
               >
-                Get Free Quote
+                Get a Free Quote <ArrowRight className="w-5 h-5" />
               </a>
 
-              {/* Contact */}
-              <div className="flex items-center gap-3">
-                <img
-                  src="/images/icon-phone.svg"
-                  alt="Phone"
-                  className="w-10 h-10"
-                />
+              {/* Contact Block */}
+              <div className="flex items-center gap-4 w-full sm:w-auto border sm:border-none border-slate-200 p-4 sm:p-0 rounded-xl">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center shrink-0">
+                  <PhoneCall className="w-6 h-6 text-[#ea580c]" />
+                </div>
                 <div>
-                  <p className="text-sm text-gray-500">
-                    Call our support center 24X7
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">
+                    Call 24/7 Support
                   </p>
-                  <a href="tel:+917338287427">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      7338287427
+                  <a href="tel:+917338287427" className="group">
+                    <h3 className="text-xl font-black text-slate-900 group-hover:text-[#ea580c] transition-colors">
+                      +91 733 828 7427
                     </h3>
                   </a>
                 </div>
@@ -91,6 +96,7 @@ const About: React.FC = () => {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

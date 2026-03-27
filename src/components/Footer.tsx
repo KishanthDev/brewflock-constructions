@@ -1,15 +1,122 @@
 import React from 'react';
+import { 
+  HardHat,
+  Mail
+} from 'lucide-react';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-900 text-white py-8">
-      <div className="container mx-auto px-4 text-center">
-        <p>&copy; {new Date().getFullYear()} BrewFlock Constructions. All Rights Reserved.</p>
-        <div className="mt-4">
-          <a href="#" className="text-gray-400 hover:text-white mx-2">Facebook</a>
-          <a href="#" className="text-gray-400 hover:text-white mx-2">Twitter</a>
-          <a href="#" className="text-gray-400 hover:text-white mx-2">LinkedIn</a>
+    <footer className="bg-[#0B1120] text-slate-300 border-t border-slate-800 relative overflow-hidden">
+      
+      {/* Subtle Background Accent */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-[#ea580c]/50 to-transparent"></div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-10">
+        
+        {/* Top Grid Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+          
+          {/* Column 1: Brand & Bio (Spans 4 columns) */}
+          <div className="lg:col-span-4 space-y-6">
+            <a href="#" className="inline-flex items-center gap-2 group">
+              <div className="p-2 rounded-lg bg-slate-800/80 border border-slate-700/50 group-hover:border-[#ea580c]/50 transition-colors">
+                <HardHat className="w-6 h-6 text-[#ea580c]" />
+              </div>
+              <span className="text-xl font-bold tracking-widest text-white uppercase">
+                Brewflock
+              </span>
+            </a>
+            <p className="text-slate-400 leading-relaxed max-w-sm">
+              Delivering uncompromising quality and precision for residential, commercial, and industrial projects across South India. We build legacies.
+            </p>
+            
+            {/* Social Icons */}
+            <div className="flex items-center gap-3 pt-2">
+              {[FaFacebook, FaTwitter, FaLinkedin, FaInstagram].map((Icon, i) => (
+                <a 
+                  key={i} 
+                  href="#" 
+                  className="w-10 h-10 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 hover:bg-[#ea580c] hover:text-white border border-slate-700/50 hover:border-transparent transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Column 2: Quick Links (Spans 2 columns) */}
+          <div className="lg:col-span-2">
+            <h4 className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Company</h4>
+            <ul className="space-y-4">
+              {['About Us', 'Our Projects', 'Services', 'Careers', 'Contact Team'].map((link, i) => (
+                <li key={i}>
+                  <a href={`#${link.toLowerCase().replace(' ', '-')}`} className="text-slate-400 hover:text-[#ea580c] transition-colors flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-[#ea580c] transition-colors"></span>
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Services (Spans 2 columns) */}
+          <div className="lg:col-span-2">
+            <h4 className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Expertise</h4>
+            <ul className="space-y-4">
+              {['Commercial Build', 'Custom Residential', 'Industrial Spaces', 'Renovations', 'Architecture'].map((link, i) => (
+                <li key={i}>
+                  <a href="#services" className="text-slate-400 hover:text-[#ea580c] transition-colors flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-[#ea580c] transition-colors"></span>
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Newsletter (Spans 4 columns) */}
+          <div className="lg:col-span-4">
+            <h4 className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Stay Updated</h4>
+            <p className="text-slate-400 mb-4 text-sm leading-relaxed">
+              Subscribe to our newsletter for the latest industry insights, project reveals, and construction news.
+            </p>
+            <form className="relative" onSubmit={(e) => e.preventDefault()}>
+              <div className="relative flex items-center">
+                <div className="absolute left-4 text-slate-500">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <input 
+                  type="email" 
+                  placeholder="Enter your email" 
+                  className="w-full bg-slate-900/50 border border-slate-700 rounded-xl py-4 pl-12 pr-32 text-white placeholder-slate-500 focus:outline-none focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] transition-all"
+                />
+                <button 
+                  type="submit"
+                  className="absolute right-2 top-2 bottom-2 bg-[#ea580c] hover:bg-[#c2410c] text-white font-bold px-4 rounded-lg transition-colors flex items-center gap-1 text-sm"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </div>
+
         </div>
+
+        {/* Bottom Bar: Copyright & Legal */}
+        <div className="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-slate-500 text-sm">
+            &copy; {currentYear} Brewflock Constructions. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6 text-sm">
+            <a href="#" className="text-slate-500 hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="text-slate-500 hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="text-slate-500 hover:text-white transition-colors">Sitemap</a>
+          </div>
+        </div>
+
       </div>
     </footer>
   );
