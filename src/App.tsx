@@ -8,7 +8,7 @@ export default function LandingPage() {
         Building the future of infrastructure with 100% type-safe precision.
       </p>
       <button className="btn-primary">
-        View Projects
+        View Project
       </button>
     </div>
   )
