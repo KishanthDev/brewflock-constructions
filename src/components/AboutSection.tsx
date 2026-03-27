@@ -28,9 +28,9 @@ const About: React.FC = () => {
             <div className="absolute -inset-4 bg-orange-100 rounded-[2rem] transform -rotate-3 -z-10"></div>
             
             <img
-              src="/images/ELE/2.jpg" // Keep your image path
+              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop" 
               alt="BrewFlock Construction Project"
-              className="rounded-2xl shadow-2xl w-full h-[500px] object-cover border-4 border-white relative z-10"
+              className="rounded-2xl shadow-2xl w-full h-[500px] object-cover border-4 border-white relative z-10 bg-slate-200"
             />
             
             {/* Floating Experience Badge */}
