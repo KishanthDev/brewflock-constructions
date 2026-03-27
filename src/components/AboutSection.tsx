@@ -28,7 +28,7 @@ const About: React.FC = () => {
             <div className="absolute -inset-4 bg-orange-100 rounded-[2rem] transform -rotate-3 -z-10"></div>
             
             <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop" 
+              src="/aboutus.jpg" 
               alt="BrewFlock Construction Project"
               className="rounded-2xl shadow-2xl w-full h-[500px] object-cover border-4 border-white relative z-10 bg-slate-200"
             />
