@@ -1,3 +1,4 @@
+import { HardHat } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 
 const Header: React.FC = () => {
@@ -23,7 +24,12 @@ const Header: React.FC = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-800 shadow-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <h1 className="text-2xl font-bold text-white">BrewFlock</h1>
+         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/40 border border-slate-600/50 backdrop-blur-md">
+            <HardHat className="w-4 h-4 text-[#ea580c]" />
+            <span className="text-xs sm:text-sm font-semibold tracking-widest text-slate-200 uppercase">
+              Brewflock Constructions
+            </span>
+          </div>
           <nav className="hidden md:flex space-x-8">
             <a href="#about" className="text-white hover:text-yellow-500 transition-colors">About</a>
             <a href="#services" className="text-white hover:text-yellow-500 transition-colors">Services</a>
