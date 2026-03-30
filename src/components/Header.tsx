@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HardHat, Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
