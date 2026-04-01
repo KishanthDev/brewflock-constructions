@@ -1,6 +1,5 @@
 import React from 'react';
-import { 
-  HardHat,
+import {
   Mail
 } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
@@ -10,20 +9,26 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-[#0B1120] text-slate-300 border-t border-slate-800 relative overflow-hidden">
-      
+
       {/* Subtle Background Accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-px bg-gradient-to-r from-transparent via-[#ea580c]/50 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-10">
-        
+
         {/* Top Grid Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-          
+
           {/* Column 1: Brand & Bio (Spans 4 columns) */}
           <div className="lg:col-span-4 space-y-6">
             <a href="#" className="inline-flex items-center gap-2 group">
-              <div className="p-2 rounded-lg bg-slate-800/80 border border-slate-700/50 group-hover:border-[#ea580c]/50 transition-colors">
-                <HardHat className="w-6 h-6 text-[#ea580c]" />
+              <div className="relative flex items-center justify-center rounded-xl bg-slate-800/50 border border-slate-600/50 shadow-sm backdrop-blur-md transition-all duration-300 group-hover:bg-slate-700/60 group-hover:border-slate-500/70 group-hover:shadow-[0_0_15px_rgba(234,88,12,0.2)] overflow-hidden">
+
+                <img
+                  src="/favicon.jpeg"
+                  alt="Brewflock Logo"
+                  className="w-7 h-7 object-contain transform transition-transform duration-300 group-hover:scale-110"
+                />
+
               </div>
               <span className="text-xl font-bold tracking-widest text-white uppercase">
                 Brewflock
@@ -32,13 +37,13 @@ const Footer: React.FC = () => {
             <p className="text-slate-400 leading-relaxed max-w-sm">
               Delivering uncompromising quality and precision for residential, commercial, and industrial projects across South India. We build legacies.
             </p>
-            
+
             {/* Social Icons */}
             <div className="flex items-center gap-3 pt-2">
               {[FaFacebook, FaTwitter, FaLinkedin, FaInstagram].map((Icon, i) => (
-                <a 
-                  key={i} 
-                  href="#" 
+                <a
+                  key={i}
+                  href="#"
                   className="w-10 h-10 rounded-full bg-slate-800/80 flex items-center justify-center text-slate-400 hover:bg-[#ea580c] hover:text-white border border-slate-700/50 hover:border-transparent transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <Icon className="w-4 h-4" />
@@ -88,12 +93,12 @@ const Footer: React.FC = () => {
                 <div className="absolute left-4 text-slate-500">
                   <Mail className="w-5 h-5" />
                 </div>
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
+                <input
+                  type="email"
+                  placeholder="Enter your email"
                   className="w-full bg-slate-900/50 border border-slate-700 rounded-xl py-4 pl-12 pr-32 text-white placeholder-slate-500 focus:outline-none focus:border-[#ea580c] focus:ring-1 focus:ring-[#ea580c] transition-all"
                 />
-                <button 
+                <button
                   type="submit"
                   className="absolute right-2 top-2 bottom-2 bg-[#ea580c] hover:bg-[#c2410c] text-white font-bold px-4 rounded-lg transition-colors flex items-center gap-1 text-sm"
                 >
