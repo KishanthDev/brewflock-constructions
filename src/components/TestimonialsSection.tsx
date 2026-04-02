@@ -2,7 +2,6 @@ import React from 'react';
 import { Star, Quote } from 'lucide-react';
 
 const TestimonialsSection: React.FC = () => {
-  // Upgraded data with more context to build trust
   const testimonials = [
     { 
       name: 'Sarah Jenkins', 
@@ -28,33 +27,40 @@ const TestimonialsSection: React.FC = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-white relative overflow-hidden">
+    <section id="testimonials" className="py-20 md:py-28 bg-white relative overflow-hidden">
       
+      {/* CSS to hide the scrollbar but keep functionality */}
+      <style dangerouslySetInnerHTML={{__html: `
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+      `}} />
+
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay"></div>
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-[#ea580c] font-bold uppercase tracking-wider text-sm block mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
+          <span className="text-[#ea580c] font-semibold uppercase tracking-widest text-sm block mb-4">
             Client Success
           </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
             Built on Trust.
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
             Don't just take our word for it. Hear from the businesses and families who have trusted us to bring their most important projects to life.
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* ── RESPONSIVE GRID / CAROUSEL ── */}
+        <div className="flex lg:grid lg:grid-cols-3 gap-6 md:gap-8 overflow-x-auto lg:overflow-visible snap-x snap-mandatory lg:snap-none pb-8 lg:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className={`bg-slate-50 p-8 md:p-10 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-orange-200 transition-all duration-300 relative group ${
-                // Optional: Stagger the middle card slightly lower for a dynamic layout
+              // Mobile: Fixed width (85vw) to allow next card to peek. Desktop: Auto width.
+              className={`w-[85vw] sm:w-[350px] lg:w-auto shrink-0 snap-center bg-slate-50 p-8 md:p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-orange-200 transition-all duration-300 relative group flex flex-col ${
+                // Optional: Stagger the middle card slightly lower for a dynamic layout on desktop
                 index === 1 ? 'lg:translate-y-6 lg:hover:translate-y-4' : ''
               }`}
             >
@@ -74,7 +80,7 @@ const TestimonialsSection: React.FC = () => {
                 </div>
 
                 {/* The Quote */}
-                <p className="text-slate-700 leading-relaxed text-lg mb-8 flex-grow">
+                <p className="text-slate-700 leading-relaxed text-base md:text-lg mb-8 flex-grow">
                   "{testimonial.quote}"
                 </p>
 
@@ -86,7 +92,7 @@ const TestimonialsSection: React.FC = () => {
                   </div>
                   
                   {/* Small Project Category Badge */}
-                  <span className="hidden sm:inline-block px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-semibold text-[#ea580c] shadow-sm">
+                  <span className="hidden sm:inline-block px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-semibold text-[#ea580c] shadow-sm whitespace-nowrap ml-2">
                     {testimonial.project}
                   </span>
                 </div>

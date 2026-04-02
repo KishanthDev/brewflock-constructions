@@ -21,12 +21,18 @@ const InteriorDesignSection: React.FC = () => {
     ];
 
     return (
-        // Alternating back to bg-white
-        <section id="interior-design" className="py-8 bg-white">
+        <section id="interior-design" className="py-20 md:py-28 bg-white overflow-hidden">
+            
+            {/* CSS to hide the scrollbar but keep functionality */}
+            <style dangerouslySetInnerHTML={{__html: `
+                .scrollbar-hide::-webkit-scrollbar { display: none; }
+                .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+            `}} />
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 {/* Header */}
-                <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+                <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
                     <span className="text-[#ea580c] font-semibold uppercase tracking-widest text-sm block mb-4">
                         Interior Design
                     </span>
@@ -38,14 +44,16 @@ const InteriorDesignSection: React.FC = () => {
                     </p>
                 </div>
 
-                {/* Unified Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                {/* ── RESPONSIVE GRID / CAROUSEL ── */}
+                {/* Mobile: Horizontal flex with scroll snap. Desktop: Standard CSS Grid */}
+                <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none pb-8 md:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
                     {services.map((service, index) => {
                         const Icon = service.icon;
                         return (
                             <div 
                                 key={index} 
-                                className="group relative bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden cursor-pointer flex flex-col"
+                                // Mobile: Fixed width (85vw) to allow next card to peek. Desktop: Auto width.
+                                className="w-[85vw] sm:w-[350px] md:w-auto shrink-0 snap-center group relative bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden cursor-pointer flex flex-col"
                             >
                                 {/* Decorative Corner Flare */}
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-orange-50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

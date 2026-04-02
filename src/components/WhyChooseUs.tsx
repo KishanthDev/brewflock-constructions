@@ -31,7 +31,7 @@ export function WhyChooseUs() {
     {
       icon: IconPlaceholder,
       title: "Quality Standards",
-      desc: "Maintain the same high standards of craftsmanship, materials, and attention to detail across all residential and commercial projects."
+      desc: "Maintain the same high standards of craftsmanship and materials across all projects."
     }
   ];
 
@@ -43,11 +43,18 @@ export function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-slate-50">
+    <section className="py-20 md:py-28 bg-slate-50 overflow-hidden">
+      
+      {/* CSS to hide the scrollbar but keep functionality */}
+      <style dangerouslySetInnerHTML={{__html: `
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+      `}} />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* ── HEADER ── */}
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
           <span className="text-[#ea580c] font-semibold uppercase tracking-widest text-sm block mb-4">
             Why Choose Us?
           </span>
@@ -59,12 +66,13 @@ export function WhyChooseUs() {
           </p>
         </div>
 
-        {/* ── FEATURES GRID ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-16 md:mb-20">
+        {/* ── RESPONSIVE FEATURES GRID / CAROUSEL ── */}
+        <div className="flex lg:grid lg:grid-cols-5 gap-6 mb-16 md:mb-20 overflow-x-auto lg:overflow-visible snap-x snap-mandatory lg:snap-none pb-8 lg:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="group relative flex flex-col items-center text-center p-6 md:p-8 rounded-3xl border border-slate-100 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden"
+              // Mobile: Fixed width (80vw) to allow next card to peek. Desktop: Auto width.
+              className="w-[80vw] sm:w-[320px] lg:w-auto shrink-0 snap-center group relative flex flex-col items-center text-center p-6 md:p-8 rounded-3xl border border-slate-100 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden cursor-pointer"
             >
               {/* Decorative Corner Flare */}
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-orange-50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

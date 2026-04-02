@@ -5,7 +5,7 @@ const About: React.FC = () => {
   return (
     <section className="py-24 bg-white overflow-hidden" id="about">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#ea580c] font-bold uppercase tracking-wider text-sm block mb-3">
@@ -21,18 +21,17 @@ const About: React.FC = () => {
 
         {/* Content Grid */}
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Left Column: Image with Experience Badge */}
           <div className="relative relative-group">
             {/* Decorative background shape */}
             <div className="absolute -inset-4 bg-orange-100 rounded-[2rem] transform -rotate-3 -z-10"></div>
-            
+
             <img
-              src="/aboutus.jpg" 
+              src="/aboutus.jpg"
               alt="BrewFlock Construction Project"
-              className="rounded-2xl shadow-2xl w-full h-[500px] object-cover border-4 border-white relative z-10 bg-slate-200"
-            />
-            
+              className="rounded-2xl shadow-2xl w-full h-[260px] sm:h-[320px] md:h-[420px] lg:h-[500px] object-cover border-4 border-white relative z-10 bg-slate-200" />
+
             {/* Floating Experience Badge */}
             <div className="absolute -bottom-8 -right-8 md:-right-12 bg-slate-900 text-white p-6 md:p-8 rounded-2xl shadow-xl z-20 border border-slate-700 max-w-[200px] transform transition-transform hover:-translate-y-2 duration-300 hidden sm:block">
               <div className="text-5xl font-black text-[#ea580c] mb-1">30+</div>
@@ -67,7 +66,7 @@ const About: React.FC = () => {
 
             {/* Footer / CTA Area */}
             <div className="flex flex-col sm:flex-row items-center gap-8 pt-6 border-t border-slate-200">
-              
+
               {/* Primary Button */}
               <a
                 href="/contact"
