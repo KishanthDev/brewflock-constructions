@@ -4,12 +4,12 @@ import { ArrowRight } from 'lucide-react';
 const HeroSection: React.FC = () => {
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center lg:justify-start text-white overflow-hidden">
-      
+
       {/* 1. Background Image & Sophisticated Overlay */}
       <div className="absolute inset-0 w-full h-full">
-        <img 
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" 
-          alt="Modern Luxury Construction" 
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop"
+          alt="Modern Luxury Construction"
           className="w-full h-full object-cover object-center scale-105 animate-pulse-slow" // Slight scale prevents edge bleeding
         />
         {/* Elegant Gradient: Dark on the left for text readability, fading to transparent on the right */}
@@ -35,16 +35,16 @@ const HeroSection: React.FC = () => {
 
           {/* Modern Dual CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="inline-flex items-center justify-center gap-2 bg-[#ea580c] text-white font-bold py-4 px-8 rounded-xl hover:bg-[#c2410c] hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-orange-900/40 active:scale-95"
             >
               Get a Free Quote
               <ArrowRight className="w-5 h-5" />
             </a>
-            
-            <a 
-              href="#projects" 
+
+            <a
+              href="#projects"
               className="inline-flex items-center justify-center gap-2 bg-transparent border border-slate-500/50 text-white font-bold py-4 px-8 rounded-xl hover:bg-slate-800/60 hover:border-slate-400 transition-all duration-300 backdrop-blur-sm active:scale-95"
             >
               View Our Portfolio
@@ -53,7 +53,7 @@ const HeroSection: React.FC = () => {
 
         </div>
       </div>
-      
+
     </section>
   );
 };

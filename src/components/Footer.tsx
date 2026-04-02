@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
 
           {/* Column 1: Brand & Bio (Spans 4 columns) */}
-          <div className="lg:col-span-4 space-y-6">
+          <div className="lg:col-span-3 space-y-6">
             <a href="#" className="inline-flex items-center gap-2 group">
               <div className="relative flex items-center justify-center rounded-xl bg-slate-800/50 border border-slate-600/50 shadow-sm backdrop-blur-md transition-all duration-300 group-hover:bg-slate-700/60 group-hover:border-slate-500/70 group-hover:shadow-[0_0_15px_rgba(234,88,12,0.2)] overflow-hidden">
 
@@ -82,8 +82,21 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
+          {/* Column 4: Technical Specs (Spans 2 columns) */}
+          <div className="lg:col-span-2">
+            <h4 className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Tech Specs</h4>
+            <ul className="space-y-3 text-slate-400 text-sm">
+              <li><strong>Processor:</strong> Intel Ultra 9 / i9</li>
+              <li><strong>RAM:</strong> 16GB+ (64GB rec.)</li>
+              <li><strong>GPU:</strong> RTX 8GB–16GB</li>
+              <li><strong>Storage:</strong> 1TB SSD</li>
+              <li><strong>Virtual RAM:</strong> 12GB+</li>
+              <li><strong>RAM Type:</strong> DDR5</li>
+            </ul>
+          </div>
+
           {/* Column 4: Newsletter (Spans 4 columns) */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
             <h4 className="text-white font-bold mb-6 tracking-wide uppercase text-sm">Stay Updated</h4>
             <p className="text-slate-400 mb-4 text-sm leading-relaxed">
               Subscribe to our newsletter for the latest industry insights, project reveals, and construction news.

@@ -3,6 +3,10 @@ import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
+import ArchitecturalServicesSection from '../components/ArchitecturalServicesSection';
+import InteriorDesignSection from '../components/InteriorDesignSection';
+import PlanningExecutionSection from '../components/PlanningExecutionSection';
+import DesignVisualizationSection from '../components/DesignVisualizationSection';
 import ProjectsSection from '../components/ProjectsSection';
 import { WhyChooseUs } from '../components/WhyChooseUs';
 import ProcessSection from '../components/ProcessSection';
@@ -22,6 +26,10 @@ function LandingPage() {
         <HeroSection />
         <AboutSection />
         <ServicesSection />
+        <ArchitecturalServicesSection />
+        <InteriorDesignSection />
+        <PlanningExecutionSection />
+        <DesignVisualizationSection />
         <ProjectsSection />
         <WhyChooseUs />
         <ProcessSection />
