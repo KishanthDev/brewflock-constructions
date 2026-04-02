@@ -11,46 +11,22 @@ import {
 
 const ArchitecturalServicesSection: React.FC = () => {
     const services = [
-        {
-            title: 'Architectural Design & Planning',
-            icon: SquareGanttChart,
-        },
-        {
-            title: 'Building Design',
-            icon: Building,
-        },
-        {
-            title: 'House Planning',
-            icon: Home,
-        },
-        {
-            title: 'Residential Design',
-            icon: Home,
-        },
-        {
-            title: 'Commercial Architecture',
-            icon: Building2,
-        },
-        {
-            title: 'Landscape Design',
-            icon: LandPlot,
-        },
-        {
-            title: 'Interior & Exterior Design',
-            icon: Palette,
-        },
-        {
-            title: 'Floor Plan Design',
-            icon: PencilRuler,
-        },
+        { title: 'Architectural Design', icon: SquareGanttChart },
+        { title: 'Building Design', icon: Building },
+        { title: 'House Planning', icon: Home },
+        { title: 'Residential Design', icon: Home },
+        { title: 'Commercial Architecture', icon: Building2 },
+        { title: 'Landscape Design', icon: LandPlot },
+        { title: 'Interior & Exterior', icon: Palette },
+        { title: 'Floor Plan Design', icon: PencilRuler },
     ];
 
     return (
-        // Softened background to make white cards pop
+        // Notice the background is bg-slate-50 here for contrast
         <section id="architectural-services" className="py-20 md:py-28 bg-slate-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                {/* ── HEADER ── */}
+                {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
                     <span className="text-[#ea580c] font-semibold uppercase tracking-widest text-sm block mb-4">
                         Design Services
@@ -63,17 +39,16 @@ const ArchitecturalServicesSection: React.FC = () => {
                     </p>
                 </div>
 
-                {/* ── GRID ── */}
-                {/* Updated grid for better scaling: 1 col mobile, 2 tablet, 4 large desktop */}
+                {/* Unified Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                     {services.map((service, index) => {
                         const Icon = service.icon;
                         return (
                             <div 
                                 key={index} 
-                                className="group relative bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden"
+                                className="group relative bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 overflow-hidden cursor-pointer"
                             >
-                                {/* Subtle decorative corner gradient on hover for a modern touch */}
+                                {/* Decorative Corner Flare */}
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-orange-50 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                                 <div className="relative z-10 flex flex-col h-full">
@@ -82,8 +57,8 @@ const ArchitecturalServicesSection: React.FC = () => {
                                         <Icon className="w-6 h-6 stroke-[1.5]" />
                                     </div>
                                     
-                                    {/* Text */}
-                                    <h3 className="text-lg md:text-xl font-bold text-slate-800 leading-snug group-hover:text-[#ea580c] transition-colors duration-300">
+                                    {/* Content */}
+                                    <h3 className="text-lg font-bold text-slate-800 leading-snug group-hover:text-[#ea580c] transition-colors duration-300">
                                         {service.title}
                                     </h3>
                                 </div>

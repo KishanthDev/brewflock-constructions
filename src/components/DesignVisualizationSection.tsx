@@ -3,42 +3,54 @@ import { Layers3, Camera, Ruler, LayoutPanelLeft, Sun } from 'lucide-react';
 
 const DesignVisualizationSection: React.FC = () => {
     const services = [
-        { title: '3D Modeling & Elevation Design', icon: Layers3 },
+        { title: '3D Modeling & Elevation', icon: Layers3 },
         { title: 'Architectural Visualization', icon: Camera },
         { title: 'Concept Design', icon: Ruler },
         { title: 'Floor Plan Design', icon: LayoutPanelLeft },
-        { title: 'Interior & Exterior Visualization', icon: Sun },
+        { title: 'Interior & Exterior', icon: Sun },
     ];
 
     return (
-        <section id="design-visualization" className="py-24 bg-slate-50">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="text-[#ea580c] font-bold uppercase tracking-wider text-sm block mb-3">
+        <section id="design-visualization" className="py-20 md:py-28 bg-slate-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                {/* ── HEADER ── */}
+                <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+                    <span className="text-[#ea580c] font-semibold uppercase tracking-widest text-sm block mb-4">
                         Visualization
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
                         Design & Visualization
                     </h2>
-                    <p className="text-lg text-slate-600 leading-relaxed">
-                        We create stunning, photorealistic visualizations that help you see your project before it's built.
+                    <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                        We create stunning, photorealistic visualizations that allow you to explore and perfect your project before construction even begins.
                     </p>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+
+                {/* ── MINIMAL FLOATING GRID ── */}
+                {/* Using flex-wrap with center alignment so 5 items always look perfectly balanced on any screen size */}
+                <div className="flex flex-wrap justify-center gap-x-8 gap-y-12 md:gap-x-12 lg:gap-x-16">
                     {services.map((service, index) => {
                         const Icon = service.icon;
                         return (
-                            <div key={index} className="group">
-                                <div className="w-24 h-24 mx-auto bg-white rounded-full flex items-center justify-center text-slate-500 border-2 border-slate-200 group-hover:border-[#ea580c] group-hover:text-[#ea580c] transition-all duration-300 transform group-hover:scale-110">
-                                    <Icon className="w-12 h-12" />
+                            <div 
+                                key={index} 
+                                className="group flex flex-col items-center text-center w-[140px] md:w-[160px] cursor-pointer"
+                            >
+                                {/* Floating Minimal Icon */}
+                                <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center text-slate-400 shadow-sm border border-slate-100 group-hover:border-orange-100 group-hover:bg-orange-50 group-hover:text-[#ea580c] group-hover:shadow-lg group-hover:-translate-y-2 transition-all duration-500">
+                                    <Icon className="w-8 h-8 md:w-10 md:h-10 stroke-[1.5]" />
                                 </div>
-                                <h3 className="mt-5 font-semibold text-slate-700 group-hover:text-slate-900 transition-colors">
+                                
+                                {/* Refined Typography */}
+                                <h3 className="mt-6 text-sm md:text-base font-bold text-slate-700 group-hover:text-[#ea580c] transition-colors duration-300 leading-snug">
                                     {service.title}
                                 </h3>
                             </div>
                         );
                     })}
                 </div>
+                
             </div>
         </section>
     );
